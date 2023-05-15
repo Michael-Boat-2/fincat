@@ -1,5 +1,5 @@
 // JA - it is good practice to insert comment about intended use, context, contributors, etc
-
+// change
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -8,12 +8,12 @@ using namespace std;
 
 int dollars2rands(int x)
 {
-    return(x*20);
+    return (x * 20);
 }
 
 double calcRatioPM(double revenue, double expenses)
 {
-    return((revenue-expenses)/revenue);
+    return ((revenue - expenses) / revenue);
 }
 
 double calcRatioRoA(double revenue, double expenses, double assets)
@@ -23,19 +23,19 @@ double calcRatioRoA(double revenue, double expenses, double assets)
 
 double calcRatioDE(double assets, double liabilities)
 {
-    return(assets/ liabilities);
+    return (assets / liabilities);
 }
 
 char categorisePM(double ratio)
 {
     char cat;
-    if (ratio<0.08)
-        cat='unhealty';
-    else if (ratio<=0.15)
-        cat='average';
+    if (ratio < 0.08)
+        cat = 'unhealty';
+    else if (ratio <= 0.15)
+        cat = 'average';
     else
-        cat='healthy';
-    return(cat);
+        cat = 'healthy';
+    return (cat);
 }
 
 char categoriseRoA(double ratio)
@@ -47,7 +47,7 @@ char categoriseRoA(double ratio)
         cat = 'average';
     else
         cat = 'healthy';
-    return(cat);
+    return (cat);
 }
 
 char categoriseDE(double ratio)
@@ -59,10 +59,10 @@ char categoriseDE(double ratio)
         cat = 'average';
     else
         cat = 'unhealthy';
-    return(cat);
+    return (cat);
 }
 
-void process_data(char* input_file, char* output_file)
+void process_data(char *input_file, char *output_file)
 {
     ifstream f_in;
     ofstream f_out;
@@ -71,24 +71,26 @@ void process_data(char* input_file, char* output_file)
     double revenue_USD, expenses, assets, liabilities, revenue_ZAR, ratio_PM, ratio_RoA, ratio_DE;
     char cat, cat2, cat3;
 
-    f_in.open(input_file,ios::in);
-    f_out.open(output_file,ofstream::out);
+    f_in.open(input_file, ios::in);
+    f_out.open(output_file, ofstream::out);
     while (!f_in.eof())
     {
-    	f_in >> company_id >> revenue_USD >> expenses >> assets >> liabilities;
+        f_in >> company_id >> revenue_USD >> expenses >> assets >> liabilities;
         revenue_ZAR = dollars2rands(double(revenue_ZAR));
         ratio_PM = calcRatioPM(revenue_USD, expenses);
-        cat=categorisePM(ratio_PM);
-        ratio_RoA = calcRatioRoA(revenue_ZAR, expenses, assets);;
+        cat = categorisePM(ratio_PM);
+        ratio_RoA = calcRatioRoA(revenue_ZAR, expenses, assets);
+        ;
         cat2 = categoriseRoA(ratio_RoA);
         ratio_DE = calcRatioDE(assets, liabilities);
-        cat3 = categoriseDE(ratio_DE);;
-	f_out << company_id << " " << ratio_PM << " " << cat << ratio_RoA << " " << cat3 << ratio_DE << " " << cat2 << endl;
+        cat3 = categoriseDE(ratio_DE);
+        ;
+        f_out << company_id << " " << ratio_PM << " " << cat << ratio_RoA << " " << cat3 << ratio_DE << " " << cat2 << endl;
     }
     f_in.close();
     f_out.close();
 }
-        
+
 int main(int argc, char *argv[])
 {
     // JA - Need to check that 3 arguments were supplied upon execution
