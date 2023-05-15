@@ -2,13 +2,20 @@ class caclRatio
 {
 private:
 public:
-    double calcRatioPM(double revenue, double expenses){
+    caclRatio(){
 
     };
-    double calcRatioRoA(double revenue, double expenses, double assets){
 
+    double calcRatioPM(double revenue, double expenses)
+    {
+        return ((revenue - expenses) / revenue);
     };
-    double calcRatioDE(double assets, double liabilities){
-
+    double calcRatioRoA(double revenue, double expenses, double assets)
+    {
+        return ((revenue - expenses) / assets);
+    };
+    double calcRatioDE(double assets, double liabilities)
+    {
+        return (assets / liabilities);
     };
 };
