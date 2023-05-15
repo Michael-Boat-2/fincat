@@ -2,10 +2,12 @@ class caclRatio
 {
 private:
 public:
+    // Constructor for caclRatio object
     caclRatio(){
 
     };
 
+    // Public Methods
     double calcRatioPM(double revenue, double expenses)
     {
         return ((revenue - expenses) / revenue);
@@ -18,4 +20,7 @@ public:
     {
         return (assets / liabilities);
     };
+
+    // Destructor for caclRatio object
+    ~caclRatio(){};
 };
