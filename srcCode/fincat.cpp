@@ -21,7 +21,7 @@ double calcRatioPM(double revenue, double expenses)
 // Function to calculate Return on Assets ratio
 double calcRatioRoA(double revenue, double expenses, double assets)
 {
-    return (expenses / assets);
+    return ((revenue - expenses) / assets);
 }
 
 // Function to calculate Debt to Equity ratio
