@@ -7,7 +7,7 @@
 using namespace std;
 
 // Fucntion to convert Dollars ro rands of Revenue
-int dollars2rands(int x)
+double dollars2rands(double x) // pass in double and return double
 {
     return (x * 20);
 }
