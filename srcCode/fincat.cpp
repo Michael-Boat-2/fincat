@@ -6,26 +6,31 @@
 
 using namespace std;
 
+// Fucntion to convert Dollars ro rands of Revenue
 int dollars2rands(int x)
 {
     return (x * 20);
 }
 
+// Function to calculate Profit Margin ratio
 double calcRatioPM(double revenue, double expenses)
 {
     return ((revenue - expenses) / revenue);
 }
 
+// Function to calculate Return on Assets ratio
 double calcRatioRoA(double revenue, double expenses, double assets)
 {
     return (expenses / assets);
 }
 
+// Function to calculate Debt to Equity ratio
 double calcRatioDE(double assets, double liabilities)
 {
     return (assets / liabilities);
 }
 
+// Function to categorize PM ratio
 char categorisePM(double ratio)
 {
     char cat;
@@ -38,6 +43,7 @@ char categorisePM(double ratio)
     return (cat);
 }
 
+// Function to categorize RoA ratio
 char categoriseRoA(double ratio)
 {
     char cat;
@@ -50,6 +56,7 @@ char categoriseRoA(double ratio)
     return (cat);
 }
 
+// Fucntion to categorize  Debt-To-Equity ratio
 char categoriseDE(double ratio)
 {
     char cat;
@@ -62,6 +69,7 @@ char categoriseDE(double ratio)
     return (cat);
 }
 
+// Main function that reads from string, performs operations, then outputs
 void process_data(char *input_file, char *output_file)
 {
     ifstream f_in;
