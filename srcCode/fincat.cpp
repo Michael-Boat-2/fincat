@@ -14,48 +14,6 @@ double dollars2rands(double x) // pass in double and return double
     return (x * 20);
 }
 
-// Function to categorize PM ratio
-/*
-string categorisePM(double ratio)
-{
-    string cat;
-    if (ratio < 0.08)
-        cat = "unhealty";
-    else if (ratio <= 0.15)
-        cat = "average";
-    else
-        cat = "healthy";
-    return (cat);
-}
-
-// Function to categorize RoA ratio
-string categoriseRoA(double ratio)
-{
-    string cat;
-    if (ratio < 0.08)
-        cat = "unhealthy";
-    else if (ratio <= 0.15)
-        cat = "average";
-    else
-        cat = "healthy";
-    return (cat);
-}
-
-// Fucntion to categorize  Debt-To-Equity ratio
-string categoriseDE(double ratio)
-{
-    string cat;
-    if (ratio < 1)
-        cat = "healthy";
-    else if (ratio <= 2)
-        cat = "average";
-    else
-        cat = "unhealthy";
-    return (cat);
-}
-
-*/
-
 // Main function that reads from string, performs operations, then outputs
 void process_data(char *input_file, char *output_file)
 {
