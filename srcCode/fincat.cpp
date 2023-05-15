@@ -12,25 +12,6 @@ double dollars2rands(double x) // pass in double and return double
 {
     return (x * 20);
 }
-/*
-// Function to calculate Profit Margin ratio
-double calcRatioPM(double revenue, double expenses)
-{
-    return ((revenue - expenses) / revenue);
-}
-
-// Function to calculate Return on Assets ratio
-double calcRatioRoA(double revenue, double expenses, double assets)
-{
-    return ((revenue - expenses) / assets);
-}
-
-// Function to calculate Debt to Equity ratio
-double calcRatioDE(double assets, double liabilities)
-{
-    return (assets / liabilities);
-}
-*/
 
 // Function to categorize PM ratio
 char categorisePM(double ratio)
