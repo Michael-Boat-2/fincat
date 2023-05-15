@@ -1,3 +1,4 @@
+Michael Anokye-Boateng
 # Description for Lab Test
 
 This code takes as input a data file with the revenue, expenses, assets and liabilities of companies and computes finalcial ratios and categorization for that company. 
