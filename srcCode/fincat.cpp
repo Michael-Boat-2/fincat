@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include "calcRatio.h"
+#include "catState.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ double dollars2rands(double x) // pass in double and return double
 }
 
 // Function to categorize PM ratio
+/*
 string categorisePM(double ratio)
 {
     string cat;
@@ -52,6 +54,8 @@ string categoriseDE(double ratio)
     return (cat);
 }
 
+*/
+
 // Main function that reads from string, performs operations, then outputs
 void process_data(char *input_file, char *output_file)
 {
@@ -62,6 +66,7 @@ void process_data(char *input_file, char *output_file)
     double revenue_USD, expenses, assets, liabilities, revenue_ZAR, ratio_PM, ratio_RoA, ratio_DE;
     string cat, cat2, cat3; // categories for ratios , made to be strings.
     caclRatio companyRatio;
+    catState ratioCat;
 
     f_in.open(input_file, ios::in);
     f_out.open(output_file, ofstream::out);
@@ -72,13 +77,13 @@ void process_data(char *input_file, char *output_file)
         revenue_ZAR = dollars2rands(double(revenue_USD)); // Conversion of Revenue is made
 
         ratio_PM = companyRatio.calcRatioPM(revenue_ZAR, expenses); // revenue ZAR passed to our functions
-        cat = categorisePM(ratio_PM);
+        cat = ratioCat.categorisePM(ratio_PM);
 
         ratio_RoA = companyRatio.calcRatioRoA(revenue_ZAR, expenses, assets);
-        cat2 = categoriseRoA(ratio_RoA);
+        cat2 = ratioCat.categoriseRoA(ratio_RoA);
 
         ratio_DE = companyRatio.calcRatioDE(assets, liabilities);
-        cat3 = categoriseDE(ratio_DE);
+        cat3 = ratioCat.categoriseDE(ratio_DE);
 
         f_out << company_id << " " << ratio_PM << " " << cat << ratio_RoA << " " << cat3 << ratio_DE << " " << cat2 << endl;
     }
