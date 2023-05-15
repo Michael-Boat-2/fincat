@@ -36,6 +36,19 @@ public:
         return (cat);
     };
 
+    // Function to categorize that works for the PM or the RoA ratio
+    string categorise_PM_RoA(double ratio)
+    {
+        string cat;
+        if (ratio < 0.08)
+            cat = "unhealthy";
+        else if (ratio <= 0.15)
+            cat = "average";
+        else
+            cat = "healthy";
+        return (cat);
+    };
+
     // Fucntion to categorize  Debt-To-Equity ratio
     string categoriseDE(double ratio)
     {
