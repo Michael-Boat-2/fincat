@@ -35,7 +35,7 @@ void process_data(char *input_file, char *output_file)
         revenue_ZAR = dollars2rands(double(revenue_USD)); // Conversion of Revenue is made
 
         ratio_PM = companyRatio.calcRatioPM(revenue_ZAR, expenses); // revenue ZAR passed to our functions
-        cat = ratioCat.categorisePM(ratio_PM);
+        cat = ratioCat.categorisePM(ratio_PM);                      // Using the object to access the category methods. Returns string
 
         ratio_RoA = companyRatio.calcRatioRoA(revenue_ZAR, expenses, assets);
         cat2 = ratioCat.categoriseRoA(ratio_RoA);
