@@ -12,7 +12,7 @@ double dollars2rands(double x) // pass in double and return double
 {
     return (x * 20);
 }
-
+/*
 // Function to calculate Profit Margin ratio
 double calcRatioPM(double revenue, double expenses)
 {
@@ -30,6 +30,7 @@ double calcRatioDE(double assets, double liabilities)
 {
     return (assets / liabilities);
 }
+*/
 
 // Function to categorize PM ratio
 char categorisePM(double ratio)
@@ -79,6 +80,7 @@ void process_data(char *input_file, char *output_file)
     string company_id;
     double revenue_USD, expenses, assets, liabilities, revenue_ZAR, ratio_PM, ratio_RoA, ratio_DE;
     char cat, cat2, cat3; // categories for ratios
+    caclRatio companyRatio;
 
     f_in.open(input_file, ios::in);
     f_out.open(output_file, ofstream::out);
@@ -88,12 +90,13 @@ void process_data(char *input_file, char *output_file)
         f_in >> company_id >> revenue_USD >> expenses >> assets >> liabilities;
         revenue_ZAR = dollars2rands(double(revenue_USD)); // Conversion of Revenue is made
 
-        ratio_PM = calcRatioPM(revenue_ZAR, expenses); // revenue ZAR passed to our functions
+        ratio_PM = companyRatio.calcRatioPM(revenue_ZAR, expenses); // revenue ZAR passed to our functions
         cat = categorisePM(ratio_PM);
-        ratio_RoA = calcRatioRoA(revenue_ZAR, expenses, assets);
 
+        ratio_RoA = companyRatio.calcRatioRoA(revenue_ZAR, expenses, assets);
         cat2 = categoriseRoA(ratio_RoA);
-        ratio_DE = calcRatioDE(assets, liabilities);
+
+        ratio_DE = companyRatio.calcRatioDE(assets, liabilities);
         cat3 = categoriseDE(ratio_DE);
 
         f_out << company_id << " " << ratio_PM << " " << cat << ratio_RoA << " " << cat3 << ratio_DE << " " << cat2 << endl;
