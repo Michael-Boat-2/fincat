@@ -24,7 +24,7 @@ void process_data(char *input_file, char *output_file)
     double revenue_USD, expenses, assets, liabilities, revenue_ZAR, ratio_PM, ratio_RoA, ratio_DE;
     string cat, cat2, cat3; // categories for ratios , made to be strings.
     caclRatio companyRatio; // Creates instance of company ratio object
-    catState ratioCat;      // Creates instance of ratio category
+    catState ratioCat;      // Creates instance of ratio category object
 
     f_in.open(input_file, ios::in);
     f_out.open(output_file, ofstream::out);
