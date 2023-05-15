@@ -14,41 +14,41 @@ double dollars2rands(double x) // pass in double and return double
 }
 
 // Function to categorize PM ratio
-char categorisePM(double ratio)
+string categorisePM(double ratio)
 {
-    char cat;
+    string cat;
     if (ratio < 0.08)
-        cat = 'unhealty';
+        cat = "unhealty";
     else if (ratio <= 0.15)
-        cat = 'average';
+        cat = "average";
     else
-        cat = 'healthy';
+        cat = "healthy";
     return (cat);
 }
 
 // Function to categorize RoA ratio
-char categoriseRoA(double ratio)
+string categoriseRoA(double ratio)
 {
-    char cat;
+    string cat;
     if (ratio < 0.08)
-        cat = 'unhealthy';
+        cat = "unhealthy";
     else if (ratio <= 0.15)
-        cat = 'average';
+        cat = "average";
     else
-        cat = 'healthy';
+        cat = "healthy";
     return (cat);
 }
 
 // Fucntion to categorize  Debt-To-Equity ratio
-char categoriseDE(double ratio)
+string categoriseDE(double ratio)
 {
-    char cat;
+    string cat;
     if (ratio < 1)
-        cat = 'healthy';
+        cat = "healthy";
     else if (ratio <= 2)
-        cat = 'average';
+        cat = "average";
     else
-        cat = 'unhealthy';
+        cat = "unhealthy";
     return (cat);
 }
 
@@ -60,7 +60,7 @@ void process_data(char *input_file, char *output_file)
     string data;
     string company_id;
     double revenue_USD, expenses, assets, liabilities, revenue_ZAR, ratio_PM, ratio_RoA, ratio_DE;
-    char cat, cat2, cat3; // categories for ratios
+    string cat, cat2, cat3; // categories for ratios , made to be strings.
     caclRatio companyRatio;
 
     f_in.open(input_file, ios::in);
